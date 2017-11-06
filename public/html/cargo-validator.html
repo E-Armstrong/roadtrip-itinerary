@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/cargo-validator.css">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Cargo Calculator</h1>
+            <p>So, here's the deal. I can only buy $200 worth of stuff and I can only carry 200 lb. Here are the four essential items for my trip. Help me pick the best ratio of all of these items and the webiste will calculate if your selections cost or weigh too much.</p>
+            <a class="link" href="/">Take me back Home!</a>
+            <br>
+            <img src="/img/beer.png">
+            <br>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <p>{{ totalBeer }}</p>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <br>
+            <img src="/img/gatorade.jpg">
+            <br>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <p>{{ totalGatorade }}</p>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <br>
+            <img src="/img/soup.jpg">
+            <br>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <p>{{ totalSoup }}</p>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <br>
+            <img src="/img/tp.png">
+            <br>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <p>{{ totalTP }}</p>
+            <button v-on:click="makeAMouse()" type="button" class="btn btn-secondary">Secondary</button>
+            <br>
+            <br>
+            <p>Total Weight:</p>
+            <p>{{ totalWeight }}</p>
+            <p>Total Cost:</p>
+            <p>{{ totalCost }}</p>
+        </div>
+        <script src="/js/cargo-validator.js"></script>
+    </body>
+</html>
