@@ -1,4 +1,14 @@
+.totalButton {
+        color: rgb(255, 17, 17);
+        box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
 
+#final-message {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 img {
     width: 400px;

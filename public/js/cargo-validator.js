@@ -5,6 +5,7 @@ var mainVM = new Vue({
         totalGatorade: 0,
         totalSoup: 0,
         totalTP: 0,
+        finalMessage: "",
     },
     //weights
     // beer 18 lb $20
@@ -48,6 +49,11 @@ var mainVM = new Vue({
                 this.totalTP = 0
             }
         },
+        dataToServer: function($event) {
+            $.post('/validate-cargo', {beerKey: this.totalBeer, gatoradeKey: this.totalGatorade, soupKey: this.totalSoup, TPKey: this.totalTP}, (dataFromServer) => {
+            this.finalMessage = dataFromServer
+            })
+        },
     },
     computed : {
         totalWeight: function () {
@@ -56,5 +62,11 @@ var mainVM = new Vue({
         totalCost: function () {
             return (this.totalBeer * 20) + (this.totalGatorade * 13) + (this.totalSoup * 15) + (this.totalTP * 16)
         },
+        totalTooMuch: function () {
+            if (this.totalWeight > 200 || this.totalCost > 200) {
+                return true
+            }
+        },
     }
+    
 })

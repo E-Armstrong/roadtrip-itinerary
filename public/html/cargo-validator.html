@@ -40,8 +40,13 @@
             <p>{{ totalWeight }} lb</p>
             <p>Total Cost:</p>
             <p>${{ totalCost }}</p>
-            <button type="button" class="btn btn-secondary">Submit Amounts to See if it'll work for Eric</button>
+            <button v-bind:class="{ totalButton: totalTooMuch }" v-on:click="dataToServer" type="button"  class="btn btn-secondary">Submit Amounts to see if it'll work for Eric</button>
+            <p id="final-message">{{ finalMessage }}</p>
+            <br>
+            <br>
+            <br>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/js/cargo-validator.js"></script>
     </body>
 </html>
